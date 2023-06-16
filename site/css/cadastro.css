@@ -100,3 +100,11 @@ body {
     right:15px;
 }
 
+.container .troca {
+    margin-top: 10px;
+}
+
+.container .troca a{
+    text-decoration: none;
+    color: #111;
+}
