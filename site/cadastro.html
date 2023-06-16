@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container"> 
+    <form action="respostacadastro.php">
+        <h2>Cadastrar-se</h2>
+        <div class="input-box">
+            <span class="icons">
+                <ion-icon name="person"></ion-icon>
+            </span>
+            <input type="text" name="nome" required>
+            <label>Nome</label>
+        </div>
+        <div class="input-box">
+            <span class="icons">
+                <ion-icon name="mail"></ion-icon>
+            </span>
+            <input type="text" name="email" required>
+            <label>Email</label>
+        </div>
+        <div class="input-box">
+            <span class="icons">
+                <ion-icon name="lock-closed"></ion-icon>
+            </span>
+            <input type="text" name="senha" required>
+            <label>Senha</label>
+        </div>
+        <input type="submit" id="brasil" value="Cadastrar">
+    </form>
+    <button class="extra">Continue com o Google <ion-icon name="logo-google"></ion-icon></button>
+    <button class="extra">Continue com o Facebook <ion-icon name="logo-facebook"></ion-icon></button>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
