@@ -20,6 +20,10 @@
             gap: 2em;
         }
 
+        .container .card {
+            border: 4px solid rgba(255,255,255,0.5);
+        }
+
 
     </style>
 </head>
