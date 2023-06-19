@@ -10,9 +10,11 @@
         body{
             margin: 0;
             padding: 0;
+            background-color: transparent;
         }
 
         .container{
+            margin-top: 2em;
             display: flex;
             flex-wrap: wrap;
             gap: 2em;
