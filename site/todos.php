@@ -32,12 +32,13 @@ $result = $conexao->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $imagem = $row['imagem'];
+        $id = $row['idtb_lugar'];
         echo "<div class='card' style='width: 18rem;'>";
         echo "<img class='card-img-top' src='imagens/locais/$imagem' alt='Card image cap'>";
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>".$row["nome_lugar"]."</h5>";
         echo "<p class='card-text'>Um local ".$row["temperatura"].",".$row["urbano"].",".$row["chique"].",".$row["praia"]." e ".$row["agitacao"]."</p>";
-        echo "<a href='#' class='btn btn-primary'>Visitar</a>";
+        echo "<a href='infolocal.php?idlugar=$id' class='btn btn-primary'>Visitar</a>";
         echo "</div>";
         echo "</div>";
     }
