@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="imagens/logo.png">
+    <title>Destino Livre</title>
     <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .barra{
+            width: 100%;
+        }
         .container{
             height: 400px;
         }
@@ -17,6 +26,29 @@
     </style>
 </head>
 <body>
+    <header class="barra">
+        <section class="top-nav">
+          <div class="logo">
+            <img src="imagens/logo.png" alt="">
+            <h2>Destino Livre</h2>
+          </div>
+          <input id="menu-toggle" type="checkbox" />
+          <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+          <ul class="menu">
+          <li>
+              <a href="#" class="link" target="tela"><ion-icon name="map"></ion-icon>Minha viagens</a>
+          </li>
+          <li>
+              <a href="todos.php" class="links" target="tela"><ion-icon name="airplane" class="links"></ion-icon>Locais</a>
+          </li>
+          <li>
+              <a href="cadastro.html" class="links" ><ion-icon name="person"></ion-icon>Cadastrar</a>
+          </li>
+          </ul>
+        </section>
+      </header>
     <div class="container"> 
         <form action="login.php">
             <h2>Login</h2>
