@@ -9,7 +9,6 @@
 </head>
 <body>
     <?php
-
         $id_lugar = $_GET['idlugar'];
         $conexao = mysqli_connect('db','root','123','db_turismo');
    
@@ -27,7 +26,7 @@
                 echo "<div class='body-text'>";
                 echo "<h2 class='title'>".$row["nome_lugar"]."</h2>";
                 echo "<p class='text'>$descricao</p>";
-                echo "<a href='#' class='btn'>R$$preco|Comprar</a>";
+                echo "<a href='pagamento.php?idlugar=$id' class='btn'>R$$preco|Comprar</a>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";

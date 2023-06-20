@@ -1,25 +1,15 @@
--- Adminer 4.8.1 MySQL 5.5.5-10.5.21-MariaDB-1:10.5.21+maria~ubu2004 dump
+-- Adminer 4.8.1 MySQL 5.5.5-10.5.20-MariaDB-1:10.5.20+maria~ubu2004 dump
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-DROP TABLE IF EXISTS `recomendacao`;
-CREATE TABLE `recomendacao` (
-  `tb_cliente_idtb_cliente` int(11) NOT NULL,
-  `idtb_recomendacao` int(11) NOT NULL,
-  `recomendacao_localidade` varchar(45) NOT NULL,
-  `recomendacao_temperatura` varchar(45) NOT NULL,
-  `recomendacao_praia` varchar(45) NOT NULL,
-  `recomendacao_chique` varchar(45) NOT NULL,
-  `recomendacao_aventura` varchar(45) NOT NULL,
-  `recomendacao_urbano` varchar(45) NOT NULL,
-  PRIMARY KEY (`idtb_recomendacao`),
-  KEY `fk_recomendacao_tb_cliente_idx` (`tb_cliente_idtb_cliente`),
-  CONSTRAINT `fk_recomendacao_tb_cliente` FOREIGN KEY (`tb_cliente_idtb_cliente`) REFERENCES `tb_cliente` (`idtb_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+SET NAMES utf8mb4;
 
+DROP DATABASE IF EXISTS `db_turismo`;
+CREATE DATABASE `db_turismo` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+USE `db_turismo`;
 
 DROP TABLE IF EXISTS `tb_cliente`;
 CREATE TABLE `tb_cliente` (
@@ -31,6 +21,23 @@ CREATE TABLE `tb_cliente` (
   UNIQUE KEY `senha_cliente_UNIQUE` (`senha_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+
+DROP TABLE IF EXISTS `tb_hotel`;
+CREATE TABLE `tb_hotel` (
+  `idtb_hotel` int(11) NOT NULL,
+  `nome_hotel` varchar(50) NOT NULL,
+  `tb_lugar_idtb_lugar` int(11) NOT NULL,
+  `preco_hotel` int(11) NOT NULL,
+  `data_disponivel_ida` date NOT NULL,
+  `data_disponivel_volta` date NOT NULL,
+  KEY `tb_lugar_idtb_lugar` (`tb_lugar_idtb_lugar`),
+  CONSTRAINT `tb_hotel_ibfk_1` FOREIGN KEY (`tb_lugar_idtb_lugar`) REFERENCES `tb_lugar` (`idtb_lugar`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `tb_hotel` (`idtb_hotel`, `nome_hotel`, `tb_lugar_idtb_lugar`, `preco_hotel`, `data_disponivel_ida`, `data_disponivel_volta`) VALUES
+(1,	'Hotel X',	1,	300,	'2023-04-19',	'2023-04-25'),
+(2,	'Hotel Y',	1,	350,	'2023-04-01',	'2023-08-31'),
+(3,	'Hotel Z',	1,	250,	'2023-03-20',	'2023-03-27');
 
 DROP TABLE IF EXISTS `tb_lugar`;
 CREATE TABLE `tb_lugar` (
@@ -57,6 +64,9 @@ CREATE TABLE `tb_venda` (
   `idtb_venda` int(11) NOT NULL,
   `tb_lugar_idtb_lugar` int(11) NOT NULL,
   `tb_cliente_idtb_cliente` int(11) NOT NULL,
+  `data_ida_lugar` date NOT NULL,
+  `data_volta_lugar` date NOT NULL,
+  `chave_pix` varchar(50) NOT NULL,
   PRIMARY KEY (`idtb_venda`,`tb_lugar_idtb_lugar`),
   KEY `fk_tb_carrinho_tb_lugar1_idx` (`tb_lugar_idtb_lugar`),
   KEY `tb_cliente_idtb_cliente` (`tb_cliente_idtb_cliente`),
@@ -65,4 +75,4 @@ CREATE TABLE `tb_venda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
--- 2023-06-16 19:21:44
+-- 2023-06-20 13:57:11
