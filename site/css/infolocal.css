@@ -6,8 +6,9 @@
     font-family: 'Poppins',sans-serif;
 }
 body{
-    background-color: black;
+    background-color: whitesmoke;
 }
+
 .img img{
     float: left;
     width: 600px;
