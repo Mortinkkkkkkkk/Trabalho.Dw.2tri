@@ -1,0 +1,35 @@
+body{
+    background-color: white;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box .form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form .inputs{
+    margin-top: 15px;
+}
+
+.form .submit{
+    margin-top: 15px;
+    font-weight: 600;
+    width: 40%;
+    height: 40px;
+    border: 2px solid #08a816;
+    border-radius: 5px;
+    background-color: #08a816;
+    transition: .25s;
+}
+.form .submit:hover{
+    transition: .25s;
+    background-color: #034208;
+    border-color: #034208;
+    border-radius: 15px;
+}

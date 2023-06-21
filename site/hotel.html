@@ -13,19 +13,8 @@
     <form action="poshotel.php" class="form">
         <label for="cidade">Cidade do Hotel:</label>
         <select name="cidade" id="1">
-            <?php
-                require_once 'conexao.php' ;
-
-                $sql = "SELECT * FROM tb_lugar";
-                $resultado = mysqli_query($conexao,$sql);
-                if (mysqli_num_rows($resultado) > 0){
-                    while ($row = mysqli_fetch_array($resultado)){
-                        $cidade = $row['nome_lugar'];
-                        $id = $row['idtb_lugar'];
-                        echo "<option value='$id'>$cidade</option>";
-                    }
-                }
-            ?>
+            <option value="1">teste</option>
+            <option value="2">teste2</option>
         </select>
         <div class="inputs">
             <label for="dataida">Dara de Ida:</label>
