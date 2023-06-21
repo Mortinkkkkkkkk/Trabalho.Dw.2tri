@@ -24,7 +24,22 @@
             border: 4px solid rgba(255,255,255,0.5);
         }
 
+        .card .disponivel{
+            color:lawngreen;
+        }
 
+        .card .indisponivel{
+            color: red;
+        }
+
+        .card .btn-indpon{
+            background-color: gray;
+            border-color: gray;
+        }
+
+        .card .btn-indpon{
+            background-color: gray;
+        }
     </style>
 </head>
 <body>
@@ -39,17 +54,28 @@ $result = $conexao->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $id = $row['idtb_hotel'];
+        $dataida = $_GET['dataida'];
+        $datavolta = $_GET['datavolta'];
+        $bd_ida = $row['data_disponivel_ida'];
+        $bd_volta = $row['data_disponivel_volta'];
+        if ($bd_ida <= $dataida){
+            $disponivel = "<p class='card-text disponivel'>Disponivel</p>";
+            $botao = "<a href='' class='btn btn-primary'>Visitar</a>";
+        } else{
+            $disponivel = "<p class='card-text indisponivel'>Indisponivel</p>";
+            $botao = "<a href='' class='btn btn-secondary btn-indpon' readonly>Visitar</a>";
+        }
         echo "<div class='card' style='width: 18rem;'>";
         echo "<img class='card-img-top' src='imagens/hotel/hotel.jpeg' alt='Card image cap'>";
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>".$row["nome_hotel"]."</h5>";
-        echo "<p class='card-text'></p>";
-        echo "<a href='infolocal.php?idhotel=$id' class='btn btn-primary'>Visitar</a>";
+        echo $disponivel;
+        echo $botao;
         echo "</div>";
         echo "</div>";
     }
 } else {
-    echo "0 results";
+    echo "<p style='background-color: white; width: 100%;'>0 results</p>";
 } 
 ?>
 </div>

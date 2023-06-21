@@ -15,7 +15,7 @@
         <select name="cidade" id="1">
             <?php
                 require_once 'conexao.php' ;
-
+                
                 $sql = "SELECT * FROM tb_lugar";
                 $resultado = mysqli_query($conexao,$sql);
                 if (mysqli_num_rows($resultado) > 0){
