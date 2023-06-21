@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/poppins');
+        *{
+            font-family: 'Poppins',sans-serif;
+        }
+
+        body{
+            background-color: whitesmoke;
+        }
+        
+        .pesquisa{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .pesquisa input{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="pospesquisa.php" class="pesquisa">
+            <h1>Pesquisa</h1>
+            <p>Selecione algumas da opções abaixo</p>
+            <label for="temperatura">Temperatura</label>
+            <select name="temperatura">
+                <option value="0"></option>
+                <option value="1">Quente</option>
+                <option value="2">Frio</option>
+            </select>
+            <label for="urbano">Sociedade:</label>
+            <select name="urbano">
+                <option value="90"></option>
+                <option value="3">Urbano</option>
+                <option value="4">Rural</option>
+            </select>
+            <label for="chique">Grau de riqueza:</label>
+            <select name="chique">
+                <option value="23123"></option>
+                <option value="5">Chique</option>
+                <option value="6">Aconchegante</option>
+            </select>
+            <label for="praia">Atração aquatica:</label>
+            <select name="praia">
+                <option value="256"></option>
+                <option value="7">Praia</option>
+                <option value="8">Cachoeira</option>
+            </select>
+            <label for="agitacao">Socialmente:</label>
+            <select name="agitacao">
+                <option value="75475"></option>
+                <option value="9">Caseiro</option>
+                <option value="10">Balada</option>
+            </select>
+            <input type="submit" value="Pesquisar">
+        </form>
+    </div>
+</body>
+</html>
