@@ -31,9 +31,11 @@ body{
 
 .butao{
     background-color: #08a816;
-    width: 80%;
+    width: 150px;
     height: 35px;
     padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     text-align: center;
     border: 2px solid #08a816;
     border-radius: 5px;
