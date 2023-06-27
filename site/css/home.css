@@ -22,13 +22,12 @@ body{
     align-self: center;
 }
 
-.escolha {
-    margin-top: 100px;
+.item {
+    margin-top: 3em;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
-
 .butao{
     background-color: #08a816;
     width: 150px;

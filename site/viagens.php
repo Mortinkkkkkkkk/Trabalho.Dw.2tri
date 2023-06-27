@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    timezone_offset_get
+    
 </body>
 </html>
