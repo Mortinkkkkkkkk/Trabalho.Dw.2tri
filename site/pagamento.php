@@ -55,9 +55,14 @@
 <body>
     <?php
         $id = $_GET['idlugar'];
-        echo "<form action='venda.php?idlugar='$id'' class='form'>";
+        echo "<form action='venda.php' class='form'>";
     ?>
         <div class="pessoal">
+            <h1>Seu perfil</h1>
+            <label for="perfil">Nome do perfil:</label>
+            <input type="text" name="perfil">
+            <label for="email-perfil">Email do perfil:</label>
+            <input type="text" name="email-perfil">
             <h1>Dados pessoais</h1>
             <label for="nome">Nome:</label>
             <input type="text" name="nome">
@@ -83,6 +88,20 @@
             <h1>Pagamento</h1>
             <label for="pix">Chave pix</label>
             <input type="text" name="pix" required>
+        </div>
+        <div class="local">
+            <select name="select" readonly>
+                <?php
+                    require_once 'conexao.php';
+                    $sql = "SELECT * FROM tb_lugar WHERE idtb_lugar = '$id'";
+                    $result = $conexao->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                         echo "<option value='$id'>" . $row['nome_lugar'] . "</option>";                        }
+                    }
+                ?>
+            </select>
         </div>
         <input type="submit" class="submit">
     </form>
