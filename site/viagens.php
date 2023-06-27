@@ -10,17 +10,30 @@
 <body>
     <?php
         require_once 'conexao.php';
-        $idcliente = $_GET['idcliente'];
-        echo $idcliente;     
+        $venda = "SELECT * FROM tb_venda";
+        $result = $conexao->query($venda);
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $dataida = $row['data_ida_lugar'];
+                $datavolta = $row['data_volta_lugar'];
+                $idlugar = $row['tb_lugar_idtb_lugar'];
+                $lugar = "SELECT `imagem`, `idtb_lugar`,`nome_lugar` FROM `tb_lugar` WHERE `idtb_lugar` = '$idlugar'";
+                $resultado = $conexao->query($lugar);
+                $linha = $resultado->fetch_assoc();
+                $imagem = $linha['imagem'];
+                $titulo = $linha['nome_lugar'];
+                echo "   <div class='card'>
+                <div class='imag'>
+                    <img src='imagens/locais/$imagem'>
+                </div>
+                <div class='card-title'><h2>$titulo</h2></div>
+                <div class='data'>
+                    <p>$dataida - $datavolta</p>
+                </div>
+            </div>";
+            }
+        }
     ?>
-    <div class="card">
-        <div class="imag">
-            <img src="imagens/logo.png" alt="teste">
-        </div>
-        <div class="card-title"><h2>Teste</h2></div>
-        <div class="data">
-            <p>ida - volta</p>
-        </div>
-    </div>
+
 </body>
 </html>
