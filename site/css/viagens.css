@@ -1,0 +1,17 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+*{
+    font-family: 'Poppins',sans-serif;
+}
+.card {
+    background-color: whitesmoke;
+}
+
+img{
+    width: 75px;
+    height: 75px;
+    float: left;
+}
+
+.card .card-title {
+    text-align: justify;
+}
