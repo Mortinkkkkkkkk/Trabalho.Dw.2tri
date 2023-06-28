@@ -2,16 +2,36 @@
 *{
     font-family: 'Poppins',sans-serif;
 }
+body{
+    background-color: white;
+}
 .card {
     background-color: whitesmoke;
+    height: 80px;
+    border-bottom: 5px solid gray;
+    border-right: 5px solid gray;
+    border-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 img{
-    width: 75px;
-    height: 75px;
+    position: relative;
+    border-top-left-radius: 5px;
+    width: 80px;
+    height: 80px;
     float: left;
 }
 
 .card .card-title {
-    text-align: justify;
+    font-size: larger;
+    font-weight: 700;
+    margin-left: 12%;
+    margin-top: 5px;
+}
+
+.card .data {
+    margin-top: 15px;
+    margin-left: 12%;
+    color: green;
 }

@@ -22,13 +22,14 @@
                 $linha = $resultado->fetch_assoc();
                 $imagem = $linha['imagem'];
                 $titulo = $linha['nome_lugar'];
+                echo "<h1>Viagens pendentes</h1>";
                 echo "   <div class='card'>
                 <div class='imag'>
                     <img src='imagens/locais/$imagem'>
                 </div>
-                <div class='card-title'><h2>$titulo</h2></div>
+                <div class='card-title'>$titulo</div>
                 <div class='data'>
-                    <p>$dataida - $datavolta</p>
+                    $dataida - $datavolta
                 </div>
             </div>";
             }
